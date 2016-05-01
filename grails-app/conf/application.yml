@@ -13,6 +13,7 @@ dataSource:
     dbCreate: update
     username: root
     password: igdefault
+    logSql: true
 
 environments:
     development:
