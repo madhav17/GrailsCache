@@ -59,12 +59,6 @@ grails:
         transactionManagement:
             proxies: false
 
-# or we can do this
-#    cache:
-#        enabled: true
-#        proxyTargetClass: false
-#        aopOrder: false
-#        keyGenerator: customCacheKeyGenerator used for user defined key generator
 info:
     app:
         name: '@info.app.name@'
@@ -136,15 +130,18 @@ grails:
         enabled: true
         proxyTargetClass: false
         aopOrder: false
-        keyGenerator: customCacheKeyGenerator used for user defined key generator
+#        keyGenerator: customCacheKeyGenerator used for user defined key generator
 
 
 # Hibernate features a second-level cache with a customizable cache provider
 
-#hibernate:
-#  cache:
-#    use_second_level_cache: true
-#    provider_class: net.sf.ehcache.hibernate.EhCacheProvider
-#    region:
+hibernate:
+  cache:
+    use_second_level_cache: true
+    provider_class: net.sf.ehcache.hibernate.EhCacheProvider
+    region:
 #       factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
-#
+       factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+
+
+

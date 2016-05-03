@@ -1,5 +1,7 @@
 import com.tothenew.grailsCache.Author
+import org.springframework.cache.annotation.EnableCaching
 
+@EnableCaching
 class BootStrap {
 
     def init = { servletContext ->
