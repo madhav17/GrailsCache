@@ -36,6 +36,7 @@ class Application extends GrailsAutoConfiguration {
         List<ConcurrentMapCache> cacheList = []
         cacheList.add(new ConcurrentMapCache("mess"))
         cacheList.add(new ConcurrentMapCache("fetchAuthorByName"))
+        cacheList.add(new ConcurrentMapCache("criteriaEx"))
         cacheManager.setCaches(cacheList);
 
         println "1 1"

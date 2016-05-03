@@ -16,4 +16,16 @@ class AuthorService {
     Author fetchAuthorByName(String name) {
         return Author.findByName(name)
     }
+
+    @Cacheable('criteriaEx')
+    List<Author> criteriaExample(){
+
+        Author.createCriteria().list(){
+            ilike("name", "%Author%")
+        }
+    }
+
+    Author fetchAuthorByNameWithOutCache(String name) {
+        return Author.findByName(name)
+    }
 }
